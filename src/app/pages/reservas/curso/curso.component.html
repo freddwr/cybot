@@ -1,0 +1,120 @@
+<form [formGroup]="form" (ngSubmit)="form.valid">
+    <div class="form-group row">
+
+        <div class="col-xxxl-6 col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="form-control-group">
+                <label class="label col-form-label" for="nombres"><i class="fas fa-user m-0 p-0"></i> Nombre Completo : </label>
+                <input nbInput fullWidth formControlName="nombres" id="nombres" fieldSize="small" name="fullName" placeholder="Nombre Completo" autofocus [status]="nombres.dirty ? (nombres.invalid  ? 'danger' : 'success') : 'basic'" [required]="registerform.nombres.required"
+                    [minlength]="registerform.nombres.minLength" [attr.aria-invalid]="registerform.nombres.invalid && registerform.nombres.touched ? true : null" autocomplete="off">
+                <ng-container *ngIf="registerform.nombres.invalid && registerform.nombres.touched">
+                    <p class="caption status-danger" *ngIf="registerform.nombres.errors?.required">
+                        Nombre es requerido!
+                    </p>
+                    <p class="caption status-danger" *ngIf="registerform.nombres.errors?.minlength || registerform.nombres.errors?.maxlength">
+                        El nombre no puede ser menor a 3 caracteres!
+                    </p>
+                </ng-container>
+            </div>
+        </div>
+
+        <div class="col-xxxl-6 col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="form-control-group">
+                <label class="label col-form-label" for="apellidos"><i class="fas fa-user m-0 p-0"></i> Apellido Completo: </label>
+                <input nbInput fullWidth formControlName="apellidos" id="apellidos" fieldSize="small" name="fullName" placeholder="Ap. Paterno y Materno" autofocus [status]="apellidos.dirty ? (apellidos.invalid  ? 'danger' : 'success') : 'basic'" [required]="registerform.apellidos.required"
+                    [minlength]="registerform.apellidos.minLength" [attr.aria-invalid]="registerform.apellidos.invalid && registerform.apellidos.touched ? true : null" autocomplete="off">
+                <ng-container *ngIf="registerform.apellidos.invalid && registerform.apellidos.touched">
+                    <p class="caption status-danger" *ngIf="registerform.apellidos.errors?.required">
+                        Paterno es requerido!
+                    </p>
+                    <p class="caption status-danger" *ngIf="registerform.apellidos.errors?.minlength || registerform.apellidos.errors?.maxlength">
+                        El Paterno no puede ser menor a 3 caracteres!
+                    </p>
+                </ng-container>
+            </div>
+        </div>
+
+        <div class="col-xxxl-6 col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="form-control-group">
+                <label class="label col-form-label" for="cedula"><i class="fas fa-user m-0 p-0"></i> Cedula de Identidad :</label>
+                <input nbInput fullWidth formControlName="cedula" id="cedula" fieldSize="small" name="fullName" placeholder="Cedula de identidad" autofocus autocomplete="off">
+            </div>
+        </div>
+
+
+        <div class="col-xxxl-6 col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="form-control-group">
+                <label class="label col-form-label" for="telefonoCli"><i class="fas fa-user m-0 p-0"></i> Numero Telefono :</label>
+                <input nbInput fullWidth formControlName="telefonoCli" id="telefonoCli" fieldSize="small" name="fullName" placeholder="Nro. Telefono" autofocus [status]="telefonoCli.dirty ? (telefonoCli.invalid  ? 'danger' : 'success') : 'basic'" [required]="registerform.telefonoCli.required"
+                    [minlength]="registerform.telefonoCli.minLength" [attr.aria-invalid]="registerform.telefonoCli.invalid && registerform.telefonoCli.touched ? true : null" autocomplete="off">
+                <ng-container *ngIf="registerform.telefonoCli.invalid && registerform.telefonoCli.touched">
+                    <p class="caption status-danger" *ngIf="registerform.telefonoCli.errors?.required">
+                        Telefono es requerido!
+                    </p>
+                    <p class="caption status-danger" *ngIf="registerform.telefonoCli.errors?.minlength || registerform.telefonoCli.errors?.maxlength">
+                        El Telefono no puede ser menor a 3 caracteres!
+                    </p>
+                </ng-container>
+            </div>
+        </div>
+        <!--
+              <div class="col-xxxl-6 col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                  <div class="form-control-group">
+                      <label class="label col-form-label" for="cedula">Cedula de Identidad.:</label>
+                      <input nbInput fullWidth formControlName="cedula" id="cedula" fieldSize="small" name="fullName" placeholder="C.I." autofocus [status]="cedula.dirty ? (cedula.invalid  ? 'danger' : 'success') : 'basic'" [required]="registerform.cedula.required" [minlength]="registerform.cedula.minLength"
+                          [attr.aria-invalid]="registerform.cedula.invalid && registerform.cedula.touched ? true : null" autocomplete="off">
+                      <ng-container *ngIf="registerform.cedula.invalid && registerform.cedula.touched">
+                          <p class="caption status-danger" *ngIf="registerform.cedula.errors?.required">
+                              CI o NIT es requerido!
+                          </p>
+                          <p class="caption status-danger" *ngIf="registerform.cedula.errors?.minlength || registerform.cedula.errors?.maxlength">
+                              El CI o NIT no puede ser menor a 3 caracteres!
+                          </p>
+                      </ng-container>
+                  </div>
+              </div> -->
+
+        <div class="col-xxxl-6 col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="form-control-group">
+                <label class="label col-form-label" for="correoCli"><i class="fas fa-user m-0 p-0"></i> Correo Electronico :</label>
+                <input nbInput fullWidth formControlName="correoCli" id="correoCli" fieldSize="small" name="fullName" placeholder="Example@example.com" autofocus autocomplete="off">
+            </div>
+        </div>
+
+        <div class="col-xxxl-12 col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="form-control-group row">
+                <label class="label col-form-label col-sm-12 col-12" for="cursos"><i class="fas fa-user m-0 p-0"></i> Curso a reservas : </label>
+                <div class="col-12">
+                    <nb-select placeholder="Elija una opcion" formControlName="cursos" style="width: 100%;" fullWidth autofocus [status]="cursos.dirty ? (cursos.invalid  ? 'danger' : 'success') : 'basic'" [required]="registerform.cursos.required" [attr.aria-invalid]="registerform.cursos.invalid && registerform.cursos.touched ? true : null"
+                        autocomplete="off">
+                        <nb-option value='1'> Opcion 1</nb-option>
+                        <nb-option value='2'> Opcion 2</nb-option>
+                        <nb-option value='3'> Opcion 3</nb-option>
+                        <nb-option value='4'> Opcion 4</nb-option>
+                    </nb-select>
+                    <ng-container *ngIf="registerform.cursos.invalid && registerform.cursos.touched">
+                        <p class="caption status-danger" *ngIf="registerform.cursos.errors?.required">
+                            Telefono es requerido!
+                        </p>
+                        <p class="caption status-danger" *ngIf="registerform.cursos.errors?.minlength || registerform.cursos.errors?.maxlength">
+                            El Telefono no puede ser menor a 3 caracteres!
+                        </p>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <!-- <div class="col-sm-12 offset-md-5 col-md-7"> -->
+        <div class="col-12 text-center">
+
+            <!-- <button *ngIf="!form.valid" nbButton [status]="form.invalid ? 'primary': 'success'" nbSpinnerSize="small"><i class="far fa-save mr-2"></i> Guardar</button> -->
+
+            <!-- <button *ngIf="form.valid" [disabled]="form.invalid" (click)='clientenuevo()' type="submit" nbButton [status]="form.invalid ? 'primary': 'success'" [nbSpinner]="clienteCargando$ | async" nbSpinnerStatus="active" nbSpinnerSize="small"><i class="far fa-save mr-2"></i> Guardar</button> -->
+            <!-- <button [disabled]="form.invalid" (click)='clientenuevo()' type="submit" size="small" nbButton [status]="form.invalid ? 'primary': 'success'" [nbSpinner]="carga$ | async" nbSpinnerStatus="active" nbSpinnerSize="small"><i class="far fa-save mr-2"></i> Guardar</button> -->
+            <button *ngIf="form.invalid" [disabled]="form.invalid" nbButton [status]="form.invalid ? 'primary': 'success'" [nbSpinner]="false" nbSpinnerStatus="active" nbSpinnerSize="small">Enviar Reserva</button>
+            <button *ngIf="form.valid" [disabled]="form.invalid" (click)="form.valid && enviarMessage()" type="submit" size="small" nbButton [status]="form.invalid ? 'primary': 'success'" [nbSpinner]="false" nbSpinnerStatus="active" nbSpinnerSize="small">Enviar Reserva</button>
+
+        </div>
+    </div>
+</form>
